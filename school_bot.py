@@ -92,7 +92,7 @@ if memory[user_id]["form"] is None:
         "Quick one — you’re Form what?"
     )
     update.message.reply_text(reply)
-    return
+   
 
 text = update.message.text.lower()
 
