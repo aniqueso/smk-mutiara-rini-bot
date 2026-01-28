@@ -130,7 +130,14 @@ if not is_info and len(text.split()) > 20:
    
 
     # ===== STUDENT REGISTRATION =====
-  
+    if chat_id not in authorized_ids:
+        if user_message == REGISTRATION_CODE:
+            authorized_ids.append(chat_id)
+            with open("authorized_users.txt", "a") as f: f.write(str(chat_id)+"\n")
+            if chat_id not in subscribers:
+                subscribers.append(chat_id)
+                with open("subscribers.txt", "a") as f: f.write(str(chat_id)+"\n")
+            await update.message.reply_text(f"✅ Access granted! Welcome to SMK Mutiara Rini Bot, {update.effective_user.first_name}!")
         elif user_message == ADMIN_REG_CODE:
             if chat_id not in ADMIN_IDS:
                 ADMIN_IDS.append(chat_id)
