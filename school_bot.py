@@ -73,8 +73,8 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text(welcome_text, reply_markup=reply_markup)
 
 # ===== AI & MESSAGE HANDLER =====
-user_id = str(update.message.from_user.id)
-user_name = update.message.from_user.first_name
+user_id = str(Update.message.from_user.id)
+user_name = Update.message.from_user.first_name
 
 memory = load_memory()
 
