@@ -104,7 +104,7 @@ if "form" in text:
             update.message.reply_text(
                 f"Got it 👍 Form {f}. I’ll remember that."
             )
-            return
+         
 
 text = update.message.text.lower()
 
@@ -121,7 +121,7 @@ if not is_info:
     ]
 
     update.message.reply_text(random.choice(casual_replies))
-    return
+  
 
 if not is_info and len(text.split()) > 20:
     update.message.reply_text(
