@@ -127,7 +127,7 @@ if not is_info and len(text.split()) > 20:
     update.message.reply_text(
         "Haha 😄 I’m here mainly for school stuff, but what’s up?"
     )
-    return
+   
 
     # ===== STUDENT REGISTRATION =====
     if chat_id not in authorized_ids:
