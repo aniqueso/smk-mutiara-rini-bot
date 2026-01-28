@@ -129,29 +129,7 @@ if not is_info and len(text.split()) > 20:
     )
    
 
-    # ===== STUDENT REGISTRATION =====
- 
-    # Add subscriber if new
-    if chat_id not in subscribers:
-        subscribers.append(chat_id)
-        with open("subscribers.txt", "a") as f: f.write(str(chat_id)+"\n")
 
-    # ===== MENU BUTTONS =====
-    if user_message.lower() == "school history":
-        await update.message.reply_text(history)
-        return
-    elif user_message.lower() == "teachers":
-        await update.message.reply_text(teachers)
-        return
-    elif user_message.lower() == "rules":
-        await update.message.reply_text(rules)
-        return
-    elif user_message.lower() == "faqs":
-        await update.message.reply_text(faq)
-        return
-    elif user_message.lower() == "announcements":
-        await update.message.reply_text("Check /announcement for latest updates (admin only).")
-        return
 
     # ===== AI RESPONSE (English & Malay) =====
     SYSTEM_PROMPT = """
